@@ -1,0 +1,8 @@
+services:
+  app:
+    volumes:
+      - .:/home/dev/app:rw
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: prepper:dev

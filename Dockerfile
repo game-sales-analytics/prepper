@@ -4,7 +4,7 @@ FROM docker.io/library/python:3-slim
 
 RUN python -m pip install --upgrade pip
 
-RUN addgroup -g 1000 devs && adduser -h /home/dev -u 1000 -D -G devs dev
+RUN groupadd --gid 1000 devs && useradd --create-home --uid 1000 --gid devs dev
 
 RUN pip install pipenv
 

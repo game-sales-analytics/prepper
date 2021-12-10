@@ -4,13 +4,13 @@ FROM docker.io/library/python:3-slim
 
 RUN python -m pip install --upgrade pip
 
-RUN groupadd --gid 1000 devs && useradd --create-home --uid 1000 --gid devs dev
+RUN groupadd --gid 1000 dev && useradd --create-home --uid 1000 --gid dev dev
 
 RUN pip install pipenv
 
 USER dev
 
-COPY . /home/dev/app
+COPY --chown=dev:dev . /home/dev/app
 
 WORKDIR /home/dev/app
 

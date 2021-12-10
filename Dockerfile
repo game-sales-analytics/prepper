@@ -1,10 +1,10 @@
 # syntax=docker/dockerfile:1
 
-FROM docker.io/library/python:3
+FROM docker.io/library/python:3-alpine
 
 RUN python -m pip install --upgrade pip
 
-RUN groupadd --gid 1000 devs && useradd --create-home --uid 1000 --gid 1000 dev
+RUN addgroup -g 1000 devs && adduser -h /home/dev -u 1000 -D -G devs dev
 
 RUN pip install pipenv
 

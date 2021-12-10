@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM docker.io/library/python:3-alpine
+FROM docker.io/library/python:3-slim
 
 RUN python -m pip install --upgrade pip
 
